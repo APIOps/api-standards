@@ -1,4 +1,4 @@
-# White House Web API Standards
+# APIOPs Community Web API Standards
 
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
