@@ -5,6 +5,7 @@
 * [RESTful URLs](#restful-urls)
 * [HTTP Verbs](#http-verbs)
 * [Responses](#responses)
+* [Use JSON API response formatting](#JSON-API)
 * [Error handling](#error-handling)
 * [Versions](#versions)
 * [Record limits](#record-limits)
@@ -111,6 +112,8 @@ Values in keys:
       {"834": "Water Quality"}
     ],
 
+#JSON-API
+When ever possible use [http://jsonapi.org/](http://jsonapi.org/) defined formatting in JSON responses. [todo: rewrite other sections in this document to align with JSON API spec]
 
 ## Error handling
 
