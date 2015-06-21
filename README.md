@@ -117,17 +117,22 @@ When ever possible use [http://jsonapi.org/](http://jsonapi.org/) defined format
 
 ## Error handling
 
-Error responses should include a common HTTP status code, message for the developer, message for the end-user (when appropriate), internal error code (corresponding to some specific internally determined ID), links where developers can find more info. For example:
+Error objects provide additional information about problems encountered while performing an operation. Error objects MUST be returned as an array keyed by errors in the top level of a JSON API document.
 
-    {
-      "status" : 400,
-      "developerMessage" : "Verbose, plain language description of the problem. Provide developers
-       suggestions about how to solve their problems here",
-      "userMessage" : "This is a message that can be passed along to end-users, if needed.",
-      "errorCode" : "444444",
-      "moreInfo" : "http://www.example.gov/developer/path/to/help/for/444444,
-       http://drupal.org/node/444444",
-    }
+An error object MAY have the following members:
+
+* id: a unique identifier for this particular occurrence of the problem.
+* links: a links object containing the following members:
+   * about: a link that leads to further details about this particular occurrence of the problem.
+* status: the HTTP status code applicable to this problem, expressed as a string value.
+* code: an application-specific error code, expressed as a string value.
+* title: a short, human-readable summary of the problem that SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization.
+* detail: a human-readable explanation specific to this occurrence of the problem.
+* source: an object containing references to the source of the error, optionally including any of the following members:
+   * pointer: a JSON Pointer [RFC6901] to the associated entity in the request document [e.g. "/data" for a primary data object, or "/data/attributes/title" for a specific attribute].
+   * parameter: a string indicating which query parameter caused the error.
+* meta: a meta object containing non-standard meta-information about the error.
+
 
 Use three simple, common response codes indicating (1) success, (2) failure due to client-side problem, (3) failure due to server-side problem:
 * 200 - OK
