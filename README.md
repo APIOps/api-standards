@@ -5,7 +5,7 @@
 * [RESTful URLs](#restful-urls)
 * [HTTP Verbs](#http-verbs)
 * [Responses](#responses)
-* [Use JSON API response formatting](#JSON-API)
+* [Use JSON API response formatting](#json-api)
 * [Error handling](#error-handling)
 * [Versions](#versions)
 * [Record limits](#record-limits)
