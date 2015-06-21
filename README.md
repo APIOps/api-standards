@@ -1,4 +1,4 @@
-# APIOPs Community Web API Standards
+# APIOps Community Web API Standards
 
 * [Guidelines](#guidelines)
 * [Pragmatic REST](#pragmatic-rest)
